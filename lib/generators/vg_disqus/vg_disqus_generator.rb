@@ -9,7 +9,8 @@ module VgDisqus
       argument :view_name, :type => :string, :default => "pages", :required => false
       # Copy over shared partial to render the view
       def include_partial
-        append_file "app/views/pages/show.html.haml", "\n\n= render :partial => 'shared/disqus'"
+        #append_file "app/views/pages/show.html.haml", "\n\n= render :partial => 'shared/disqus'"
+        append_file "app/views/#{view_name}/show.html.haml", "\n\n= render :partial => 'shared/disqus'"
       end
     end
   end
